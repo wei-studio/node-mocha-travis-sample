@@ -8,4 +8,5 @@ env:
 
 before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS alphaccamp_simple_twitter_test;'
-  - ./node_modules/sequelize-cli/lib/sequelize db:seed:all
+  - npm install sequelize-cli -g
+  - sequelize db:seed:all
