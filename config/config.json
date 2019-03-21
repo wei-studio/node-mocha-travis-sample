@@ -8,7 +8,7 @@
   },
   "test": {
     "username": "travis",
-    "database": "alphaccamp-simple-twitter_test",
+    "database": "alphaccamp_simple_twitter_test",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "logging" : false
