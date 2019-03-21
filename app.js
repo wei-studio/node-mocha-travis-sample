@@ -19,7 +19,7 @@ const authenticated = (req, res, next) => {
   if (helpers.ensureAuthenticated(req)) {
     return next()
   }
-  res.redirect('/')
+  res.send('fail')
 }
 
 app.get('/users', authenticated, function (req, res) {
