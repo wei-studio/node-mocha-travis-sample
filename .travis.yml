@@ -1,3 +1,11 @@
 language: node_js
 node_js:
     - "10"
+
+# 設定參數(Travis CI 會按照參數分別執行)
+env:
+  - DB=mysql
+
+before_install:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS alphaccamp-simple-twitter_test;'
+  - ./node_modules/sequelize-cli/lib/sequelize db:seed:all
