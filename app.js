@@ -15,16 +15,16 @@ const port = 3000
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
-// const authenticated = (req, res, next) => {
-//   if (helpers.ensureAuthenticated(req)) {
-//     return next()
-//   }
-//   res.redirect('/')
-// }
+const authenticated = (req, res, next) => {
+  if (helpers.ensureAuthenticated(req)) {
+    return next()
+  }
+  res.send('done')
+}
 
-// app.get('/users', authenticated, function (req, res) {
-//   return res.send('done')
-// })
+app.get('/users', authenticated, function (req, res) {
+  return res.send('done')
+})
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
